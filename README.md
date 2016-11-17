@@ -1,7 +1,7 @@
 # adium-to-avro
 Produce an Avro-formatted corpus of chat messages from Adium logs
 
-The resulting avro file is suitable for [other tools](https://github.com/jacopofar/markov-avro-tools)
+The resulting avro file is suitable for [another tool](https://github.com/jacopofar/markov-avro-tools) for generating Markov models.
 
 How to use
 ========
