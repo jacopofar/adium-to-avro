@@ -5,5 +5,5 @@ The resulting avro file is suitable for [other tools](https://github.com/jacopof
 
 How to use
 ========
-Just run `sbt run`, there are no options. It will produce a TSV and an AVro file containing all of the messages in Adium logs, from each kind of protocol (IRC, XMPP, Telegram, etc.)
+Just run `sbt run`, there are no options. It will produce a TSV and an Avro file containing all of the messages in Adium logs, from each kind of protocol (IRC, XMPP, Telegram, etc.)
 
