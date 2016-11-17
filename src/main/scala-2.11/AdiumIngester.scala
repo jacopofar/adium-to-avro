@@ -9,13 +9,13 @@ import org.xml.sax.helpers.DefaultHandler
 import scala.collection.mutable
 object AdiumIngester {
 
-  var count = 0
+  var count:Int = 0
   val userCount = mutable.HashMap[String, Integer]()
   val channelCount = mutable.HashMap[String, Integer]()
 
   def ingest(cb: (ConversationMessage) => Unit) = {
     if (System.getProperty("os.name") != "Mac OS X"){
-      println("sorry, this code currently works only on Mac OS X")
+      println("sorry, this code works only on Mac OS X with Adium 2 installed")
       System.exit(1)
     }
 
@@ -54,7 +54,13 @@ object AdiumIngester {
     if (!slf.isDirectory || slf.getName() == ".DS_Store")
       return
     println(" " * indent + " log folder " + slf.getName)
-    for(oneLog <- slf.listFiles()){
+    if (slf.listFiles() == null) {
+      println("ERROR, is NULL!!")
+      println("is directory? " + slf.isDirectory)
+      println("absolute path? " + slf.getAbsolutePath)
+
+    }
+    for(oneLog <- slf.listFiles()) {
       scanSingleLog(oneLog, indent + 2, channelName, cb)
     }
   }
